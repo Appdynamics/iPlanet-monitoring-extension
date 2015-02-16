@@ -1,0 +1,13 @@
+# iPlanet instance particulars
+host: "localhost"
+port: 8080
+statsPath: ".perf"
+
+#Proxy details if any
+#proxyHost: ""
+#proxyPort:
+#proxyUser: ""
+#proxyPassword: ""
+
+#prefix used to show up metrics in AppDynamics
+metricPrefix:  "Custom Metrics|iPlanet|"
