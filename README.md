@@ -41,82 +41,104 @@ The following metrics are reported.
 
 ###CacheInfo
 
-|Acceleratable Hit Ratio/Count|
-|Acceleratable Hit Ratio/Max|
-|Acceleratable Hit Ratio/Percent|
-|Acceleratable Reponse/Count|
-|Acceleratable Reponse/Max|
-|Acceleratable Reponse/Percent|
-|Acceleratable Requests/Count|
-|Acceleratable Requests/Max|
-|Acceleratable Requests/Percent|
-|Accelerator Entries/Count|
-|Accelerator Entries/Max|
-|File Cache Entries/Count|
-|File Cache Entries/Max|
-|File Cache Hit Ratio/Count|
-|File Cache Hit Ratio/Max|
-|File Cache Hit Ratio/Percent|
-|Maximum Age|
-|Total Sessions Count|
+| Metric Path  |
+|----------------|
+| Acceleratable Hit Ratio/Count |
+| Acceleratable Hit Ratio/Max |
+| Acceleratable Hit Ratio/Percent |
+| Acceleratable Reponse/Count | 
+| Acceleratable Reponse/Max |
+| Acceleratable Reponse/Percent |
+| Acceleratable Requests/Count |
+| Acceleratable Requests/Max |
+| Acceleratable Requests/Percent |
+| Accelerator Entries/Count |
+| Accelerator Entries/Max | 
+| File Cache Entries/Count |
+| File Cache Entries/Max |
+| File Cache Hit Ratio/Count |
+| File Cache Hit Ratio/Max |
+| File Cache Hit Ratio/Percent |
+| Maximum Age |
+| Total Sessions Count |
 
 ###ConnectionQueue
 
-|Average Queue Length(1 min)|
-|Average Queue Length(5 min)|
-|Average Queue Length(15 min)|
-|Average Queueing Delay|
-|Current Queue Length|
-|Limit Queue Length|
-|Peak Queue Length|
-|Total Connections Queued|
+| Metric Path  |
+|----------------|
+| Average Queue Length(1 min) |
+| Average Queue Length(5 min) |
+| Average Queue Length(15 min) |
+| Average Queueing Delay |
+| Current Queue Length |
+| Limit Queue Length |
+| Peak Queue Length |
+| Total Connections Queued |
 
 ###DNSCacheInfo
-|CacheEntries/Count|
-|CacheEntries/Max|
-|HitRatio/Count|
-|HitRatio/Max|
-|HitRatio/Percent|
-|Enabled|
+
+| Metric Path  |
+|----------------|
+| CacheEntries/Count |
+| CacheEntries/Max |
+| HitRatio/Count |
+| HitRatio/Max |
+| HitRatio/Percent |
+| Enabled |
 
 ###KeepAliveInfo
-|Count|
-|Flushes|
-|Hits|
-|Max|
-|Refusals|
-|Timeout (in sec)|
-|Timeouts|
+
+| Metric Path  |
+|----------------|
+| Count |
+| Flushes |
+| Hits |
+| Max |
+| Refusals |
+| Timeout (in sec) |
+| Timeouts |
 
 ###ListenSocket
-|Acceptor Threads|
+
+| Metric Path  |
+|----------------|
+| Acceptor Threads |
 
 ###Native Pools
-|NativePool/Work Queue/Length|
-|NativePool/Work Queue/Limit|
-|NativePool/Work Queue/Peak|
-|NativePool/Idle|
-|NativePool/Limit|
-|NativePool/Peak|
+
+| Metric Path  |
+|----------------|
+| NativePool/Work Queue/Length |
+| NativePool/Work Queue/Limit |
+| NativePool/Work Queue/Peak |
+| NativePool/Idle |
+| NativePool/Limit |
+| NativePool/Peak |
 
 ###Performance Counters
-|default-bucket/Function Processing Time/Average(X 1000)|
-|default-bucket/Function Processing Time/Percent|
-|default-bucket/Function Processing Time/Total(X 1000)|
-|default-bucket/Latency/Average(X 1000)|
-|default-bucket/Latency/Percent|
-|default-bucket/Latency/Total(X 1000)|
-|default-bucket/Total Response Time/Average(X 1000)|
-|default-bucket/Total Response Time/Percent|
-|default-bucket/Total Response Time/Total(X 1000)|
-|default-bucket/Number of Invocations|
-|default-bucket/Number of Requests|
+
+| Metric Path  |
+|----------------|
+| default-bucket/Function Processing Time/Average(X 1000) |
+| default-bucket/Function Processing Time/Percent |
+| default-bucket/Function Processing Time/Total(X 1000) |
+| default-bucket/Latency/Average(X 1000) |
+| default-bucket/Latency/Percent |
+| default-bucket/Latency/Total(X 1000) |
+| default-bucket/Total Response Time/Average(X 1000) |
+| default-bucket/Total Response Time/Percent |
+| default-bucket/Total Response Time/Total(X 1000) |
+| default-bucket/Number of Invocations |
+| default-bucket/Number of Requests |
 
 ###SessionCreationInfo
-|Total Sessions/Created|
-|Total Sessions/Max|
-|Active Sessions|
-|Keep-Alive Sessions|
+
+| Metric Path  |
+|----------------|
+| Total Sessions/Created |
+| Total Sessions/Max |
+| Active Sessions |
+| Keep-Alive Sessions |
 
 #Custom Dashboard
 ![]()
