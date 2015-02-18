@@ -141,7 +141,7 @@ The following metrics are reported.
 | Keep-Alive Sessions |
 
 #Custom Dashboard
-![](https://raw.githubusercontent.com/Appdynamics/iPlanet-monitoring-extension/master/iPlanet_Custom_Dash_Board.png)
+![](https://github.com/Appdynamics/iPlanet-monitoring-extension/raw/master/iPlanet_Custom_Dash_Board.png)
 
 ##Contributing
 
