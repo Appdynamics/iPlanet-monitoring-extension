@@ -6,6 +6,9 @@ This extension works only with the standalone machine agent.
 
 Oracle iPlanet Web Server, formerly  known as Sun Java System Web Server or Sun ONE Web Server, delivers a secure infrastructure for hosting different web technologies and applications for enterprises.
 
+##Prerequisite
+
+Follow the link to enable .perf stats, http://docs.oracle.com/cd/E19146-01/821-1834/abyaq/index.html
 
 ##Installation
 
