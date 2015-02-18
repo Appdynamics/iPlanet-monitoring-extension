@@ -74,8 +74,8 @@ public class IPlanetMonitor extends AManagedMonitor {
     }
 
     private void print(String metricPrefix, Map<String, Number> stats) {
-        for(Map.Entry<String, Number> stat : stats.entrySet()) {
-            printMetric(metricPrefix+stat.getKey(), stat.getValue());
+        for (Map.Entry<String, Number> stat : stats.entrySet()) {
+            printMetric(metricPrefix + stat.getKey(), stat.getValue());
         }
     }
 
@@ -111,8 +111,23 @@ public class IPlanetMonitor extends AManagedMonitor {
 
     private Map<String, String> buildHttpClientArguments(Configuration config) {
         Map<String, String> clientArgs = new HashMap<String, String>();
+        String protocol = config.getProtocol();
+        if ("https".equalsIgnoreCase(protocol)) {
+            clientArgs.put(TaskInputArgs.USE_SSL, "true");
+        } else {
+            clientArgs.put(TaskInputArgs.USE_SSL, "false");
+        }
+
         clientArgs.put(TaskInputArgs.HOST, config.getHost());
         clientArgs.put(TaskInputArgs.PORT, String.valueOf(config.getPort()));
+
+        if (!Strings.isNullOrEmpty(config.getUsername())) {
+            clientArgs.put(TaskInputArgs.USER, config.getUsername());
+        }
+
+        if (!Strings.isNullOrEmpty(config.getPassword())) {
+            clientArgs.put(TaskInputArgs.PASSWORD, config.getPassword());
+        }
 
         //set optional proxy params
         clientArgs.put(TaskInputArgs.PROXY_HOST, config.getProxyHost());
@@ -121,5 +136,12 @@ public class IPlanetMonitor extends AManagedMonitor {
         clientArgs.put(TaskInputArgs.PROXY_PASSWORD, config.getProxyPassword());
 
         return clientArgs;
+    }
+
+    public static void main(String[] args) throws TaskExecutionException {
+        IPlanetMonitor iPlanetMonitor = new IPlanetMonitor();
+        Map<String, String> taskArgs = new HashMap<String, String>();
+        taskArgs.put("config-file", "/home/satish/AppDynamics/Code/extensions/iPlanet-monitoring-extension/src/main/resources/config/config.yml");
+        iPlanetMonitor.execute(taskArgs, null);
     }
 }
