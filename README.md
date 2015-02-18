@@ -25,8 +25,12 @@ Follow the link to enable .perf stats, http://docs.oracle.com/cd/E19146-01/821-1
 <b>config.yml</b>
 ~~~
 # iPlanet instance particulars
+#https or http
+protocol: "https"
 host: "localhost"
-port: 8080
+port: 8443
+username: ""
+password: ""
 statsPath: ".perf"
 
 #Proxy details if any
