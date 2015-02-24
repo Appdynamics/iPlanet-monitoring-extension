@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.appdynamics.monitors.iPlanet;
+package com.appdynamics.monitors.iPlanet.collector;
 
 import com.appdynamics.extensions.http.Response;
 import com.appdynamics.extensions.http.SimpleHttpClient;
@@ -27,13 +27,13 @@ import org.apache.log4j.Logger;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StatsCollector {
+public class PerfStatsCollector implements StatsCollector {
 
-    private static final Logger logger = Logger.getLogger(StatsCollector.class);
+    private static final Logger logger = Logger.getLogger(PerfStatsCollector.class);
 
     private SimpleHttpClient httpClient;
 
-    public StatsCollector(SimpleHttpClient httpClient) {
+    public PerfStatsCollector(SimpleHttpClient httpClient) {
         this.httpClient = httpClient;
     }
 

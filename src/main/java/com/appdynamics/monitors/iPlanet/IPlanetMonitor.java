@@ -20,6 +20,7 @@ import com.appdynamics.TaskInputArgs;
 import com.appdynamics.extensions.PathResolver;
 import com.appdynamics.extensions.http.SimpleHttpClient;
 import com.appdynamics.extensions.yml.YmlReader;
+import com.appdynamics.monitors.iPlanet.collector.StatsCollector;
 import com.appdynamics.monitors.iPlanet.config.Configuration;
 import com.google.common.base.Strings;
 import com.singularity.ee.agent.systemagent.api.AManagedMonitor;
@@ -59,9 +60,10 @@ public class IPlanetMonitor extends AManagedMonitor {
 
                 SimpleHttpClient httpClient = SimpleHttpClient.builder(clientArguments).build();
 
-                StatsCollector statsCollector = new StatsCollector(httpClient);
+                StatsCollector statsCollector = StatsCollectorFactory.getStatsCollector(config, httpClient);
+
                 Map<String, Number> stats = statsCollector.collect(config);
-                print(config.getMetricPrefix(), stats);
+                print(config.getMetricPrefix(), config.getStatsFormat(), stats);
 
                 logger.info("iPlanet monitoring task completed successfully.");
                 return new TaskOutput("iPlanet monitoring task completed successfully.");
@@ -73,9 +75,9 @@ public class IPlanetMonitor extends AManagedMonitor {
         throw new TaskExecutionException("iPlanet monitoring task completed with failures.");
     }
 
-    private void print(String metricPrefix, Map<String, Number> stats) {
+    private void print(String metricPrefix, String statsFormat, Map<String, Number> stats) {
         for (Map.Entry<String, Number> stat : stats.entrySet()) {
-            printMetric(metricPrefix + stat.getKey(), stat.getValue());
+            printMetric(metricPrefix + statsFormat + "|" + stat.getKey(), stat.getValue());
         }
     }
 

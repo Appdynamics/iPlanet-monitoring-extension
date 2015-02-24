@@ -23,6 +23,7 @@ public class Configuration {
     private int port;
     private String username;
     private String password;
+    private String statsFormat;
     private String statsPath;
 
     private String proxyHost;
@@ -71,6 +72,14 @@ public class Configuration {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getStatsFormat() {
+        return statsFormat;
+    }
+
+    public void setStatsFormat(String statsFormat) {
+        this.statsFormat = statsFormat;
     }
 
     public String getStatsPath() {

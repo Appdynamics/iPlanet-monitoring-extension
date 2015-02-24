@@ -13,7 +13,7 @@ Follow the link to enable .perf stats, http://docs.oracle.com/cd/E19146-01/821-1
 ##Installation
 
 1. Run "mvn clean install"
-2. Download and unzip the file 'target/iPlanetMonitor.zip' to \<machineagent install dir\}/monitors
+2. Download and unzip the file 'target/iPlanetMonitor.zip' to \<machineagent install dir\>/monitors
 3. Open <b>monitor.xml</b> and configure yml path
 4. Open <b>config.yml</b> and configure the server details
 
