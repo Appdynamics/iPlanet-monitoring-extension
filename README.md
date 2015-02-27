@@ -31,7 +31,11 @@ host: "localhost"
 port: 8443
 username: ""
 password: ""
-statsPath: ".perf"
+#text or xml
+statsFormat: "xml"
+#if statsFormat is text then statsPath is .perf or any custom path you configured
+#if statsFormat is xml then statsPath is stats-xml or any custom path you configured
+statsPath: "stats-xml"
 
 #Proxy details if any
 #proxyHost: ""
@@ -45,6 +49,8 @@ metricPrefix:  "Custom Metrics|iPlanet|"
 
 ##Metrics
 The following metrics are reported.
+
+##text mode stats
 
 ###CacheInfo
 
@@ -146,6 +152,7 @@ The following metrics are reported.
 | Total Sessions/Max |
 | Active Sessions |
 | Keep-Alive Sessions |
+
 
 #Custom Dashboard
 ![](https://github.com/Appdynamics/iPlanet-monitoring-extension/raw/master/iPlanet_Custom_Dash_Board.png)
