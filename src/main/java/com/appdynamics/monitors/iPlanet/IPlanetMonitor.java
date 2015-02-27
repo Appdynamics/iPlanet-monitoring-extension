@@ -53,13 +53,10 @@ public class IPlanetMonitor extends AManagedMonitor {
             logger.info("Starting the iPlanet Monitoring Task");
             String configFilename = getConfigFilename(taskArguments.get(CONFIG_ARG));
 
+            Configuration config = YmlReader.readFromFile(configFilename, Configuration.class);
+            Map<String, String> clientArguments = buildHttpClientArguments(config);
+            SimpleHttpClient httpClient = SimpleHttpClient.builder(clientArguments).build();
             try {
-                Configuration config = YmlReader.readFromFile(configFilename, Configuration.class);
-
-                Map<String, String> clientArguments = buildHttpClientArguments(config);
-
-                SimpleHttpClient httpClient = SimpleHttpClient.builder(clientArguments).build();
-
                 StatsCollector statsCollector = StatsCollectorFactory.getStatsCollector(config, httpClient);
 
                 Map<String, Number> stats = statsCollector.collect(config);
@@ -70,6 +67,8 @@ public class IPlanetMonitor extends AManagedMonitor {
             } catch (Exception e) {
                 logger.error("Metrics collection failed", e);
                 throw new TaskExecutionException("Metrics collection failed", e);
+            } finally {
+                httpClient.close();
             }
         }
         throw new TaskExecutionException("iPlanet monitoring task completed with failures.");
